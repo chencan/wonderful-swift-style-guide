@@ -10,7 +10,7 @@
 
 它绝大部分内容，来自[The Official raywenderlich.com Swift Style Guide.](https://github.com/raywenderlich/swift-style-guide)，并加入了自己的一些偏好。  
 
-同时，Swift语言在快速的发展中，这个规范也会随着Swift的发展、以及我们对Swift更多的使用，持续进行修改和完善。
+同时，Swift语言在快速的发展中，这个规范也会随着Swift的发展、以及我们对Swift更多的使用和了解，持续地进行修改和完善。
 
 
 
@@ -80,7 +80,9 @@ class app_widgetContainer {
 }
 ```
 
-缩写应该避免，但如URL、ID这种非常常见的缩写可以使用。[API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions)中提到，如果使用这些缩写，字母应该全为大写或者小写。Examples:
+缩写应该避免，但如URL、ID这种常见的缩写可以使用。  
+
+[API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions)中提到，如果使用这些缩写，字母应该全为大写或者小写。Examples:
 
 **Preferred**
 
@@ -96,27 +98,24 @@ let uRLString: UrlString
 let userId: UserId
 ```
 
-尽可能使用argument label，替代注释，使代码self-documenting，可读性更强。
+使用argument label，替代注释，使代码self-documenting，可读性更强。
 
-如果不带argument label，parameter name就是argument label。
 
 
 ```swift
-func dateFromString(_ dateString: String) -> NSDate
 func convertPointAt(column: Int, row: Int) -> CGPoint
 func timedAction(afterDelay delay: NSTimeInterval, perform action: SKAction) -> SKAction!
 
 // would be called like this:
-dateFromString("2014-03-14")
 convertPointAt(column: 42, row: 13)
 timedAction(afterDelay: 1.0, perform: someOtherAction)
 ```
 
 ### Protocols
 
-Following Apple's API Design Guidelines, protocols names that describe what something is should be a noun. Examples: `Collection`, `WidgetFactory`. Protocols names that describe an ability should end in -ing, -able, or -ible. Examples: `Equatable`, `Resizing`.
+按照苹果的API Design Guidelines，Protocols名字可以使用名词来描述这个Protocols的内容，比如`Collection`, `WidgetFactory`。  
 
-按照苹果的API Design Guidelines，Protocols名字可以使用名词来描述这个Protocols的内容。Examples: `Collection`, `WidgetFactory`。或以-ing、-able结尾来描述Protocols实现的一些功能。Examples: `Equatable`, `Resizing`。
+或以-ing、-able结尾来描述Protocols实现的一些功能，比如: `Equatable`, `Resizing`。
 
 ### Enumerations
 
@@ -148,7 +147,7 @@ let myClass = MyModule.UsefulClass()
 
 ### Generics
  
-范型的类型名，应该是有描述性的upperCamelCase。如果不能起一个有意义的关系或角色名称，可以使用`T`、`U`或`V`。
+范型的类型名，应该是描述性的名词、upperCamelCase。如果不能起一个有意义的关系或角色名称，可以使用`T`、`U`或`V`。
  
 **Preferred:**
 
@@ -219,7 +218,7 @@ class MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDel
 
 ### Unused Code
 
-无用的代码都删掉。
+能删除的代码，都删掉。
 
 **Not Preferred:**
 
@@ -251,7 +250,7 @@ override func tableView(tableView: UITableView, numberOfRowsInSection section: I
 
 ### Minimal Imports
 
-尽可能减少依赖和 imports
+尽可能减少依赖和imports。
 
 
 ## Spacing
@@ -717,7 +716,7 @@ class TimeMachine {
 
 ## Golden Path
 
-`if`嵌套，会让代码可读性变差，使用`guard`来做函数输入合法性检查，可以减少if嵌套。
+嵌套的`if`会让代码的缩进层次不齐（整齐的缩进被称作Golden Path），会让代码可读性变差，使用`guard`来做函数输入合法性检查，可以减少if嵌套。
 
 **Preferred:**
 
