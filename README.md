@@ -2,7 +2,7 @@
 
 ## Introduction
 
-之前有一个[Objective-C style guide.](https://github.com/chencan/wonderful-objective-c-style-guide#project-organization)，这一篇是针对swift的一个补充。
+之前有一个[Objective-C style guide.](https://github.com/chencan/wonderful-objective-c-style-guide)，这一篇是针对swift的一个补充。
 
 ## Credits
 
